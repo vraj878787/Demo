@@ -36,8 +36,53 @@
     </script>
 </head>
 <body class="bg-primary font-sans text-secondary">
-    <!-- Navigation Component -->
-    <custom-nav></custom-nav>
+    <!-- Navbar -->
+<header class="bg-primary text-secondary fixed w-full top-0 left-0 shadow-lg z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between py-4 px-6">
+
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3">
+    <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?w=300" alt="Velvet Brew Haven Logo" class="w-12 h-12 object-cover rounded-full border border-[#D4AF37]">
+    <span class="text-2xl font-serif font-bold">
+        Velvet<span class="text-[#D4AF37]">Brew</span>
+    </span>
+</a>
+
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex gap-8 text-lg">
+            <a href="#hero" class="hover:text-accent transition">Home</a>
+            <a href="#about" class="hover:text-accent transition">About</a>
+            <a href="#menu" class="hover:text-accent transition">Menu</a>
+            <a href="#gallery" class="hover:text-accent transition">Gallery</a>
+            <a href="#reviews" class="hover:text-accent transition">Reviews</a>
+            <a href="#contact" class="hover:text-accent transition">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden" onclick="toggleMenu()">
+            <i data-feather="menu" class="text-secondary"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden bg-primary text-secondary flex flex-col gap-4 py-4 px-6 md:hidden border-t border-secondary/20">
+        <a href="#hero" class="hover:text-accent transition">Home</a>
+        <a href="#about" class="hover:text-accent transition">About</a>
+        <a href="#menu" class="hover:text-accent transition">Menu</a>
+        <a href="#gallery" class="hover:text-accent transition">Gallery</a>
+        <a href="#reviews" class="hover:text-accent transition">Reviews</a>
+        <a href="#contact" class="hover:text-accent transition">Contact</a>
+    </div>
+</header>
+
+<script>
+function toggleMenu() {
+    document.getElementById("mobileMenu").classList.toggle("hidden");
+}
+feather.replace();
+</script>
+
 
     <!-- Hero Section -->
     <section class="relative h-screen max-h-[800px] overflow-hidden">
